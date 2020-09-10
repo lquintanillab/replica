@@ -1,22 +1,22 @@
-package replica
+package exportacion.sucursales.calle4
 
-class ReplicaAuditLogJob {
-       static triggers = {
-      cron name:   'auditLog',   startDelay: 20000, cronExpression: '0 0/1 * * * ?'
+class ExportarExistenciaCalle4Job {
+    static triggers = {
+     cron name:   'expExistenciaCa4',   startDelay: 20000, cronExpression: '0 0/5 * * * ?'
     }
 
-    def replicaService
+    def exportadorExistencia
 
     def execute() {
-        // execute job
-        //replicaService.importar()
+
         println "************************************************"
         println "*                                              *"
         println "*                                              *"
-        println "     Exportando por AuditLog ${new Date()}"
+        println "     Exportando Existencia Calle 4 ${new Date()}"
         println "*                                              *"
         println "*                                              *"
         println "************************************************"
-        replicaService.exportar('Producto')
+
+        exportadorExistencia.exportar('CALLE 4')
     }
 }

@@ -26,7 +26,8 @@ class ReplicaAuditJob {
         println "*                                              *"
         println "*                                              *"
         println "************************************************"
-
+                                                                
         replicaAuditService.exportar()
     }
 }
+

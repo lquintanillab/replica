@@ -98,7 +98,7 @@ environments:
     development:
        dataSource:
          dbCreate: none
-         url: jdbc:mysql://10.10.1.229:3306/siipapx?autoReconnect=true
+         url: jdbc:mysql://10.10.1.229:3306/siipapx?autoReconnect=true&useSSL=false
          password: sys
          properties:
            maxActive: 20
@@ -122,7 +122,7 @@ environments:
     production:
         dataSource:
            dbCreate: none
-           url: jdbc:mysql://10.10.1.229/siipapx?autoReconnect=false
+           url: jdbc:mysql://10.10.1.229/siipapx?autoReconnect=false&useSSL=false
            password: sys
            properties:
              maxActive: 20

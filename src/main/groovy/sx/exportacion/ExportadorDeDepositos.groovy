@@ -134,7 +134,7 @@ class ExportadorDeDepositos{
 
                   }catch (Exception e){
 
-                    String err="Error importando a central: "
+                    String err="Error exportando a central: "
                       sqlSuc.execute("UPDATE AUDIT_LOG SET MESSAGE=?,DATE_REPLICATED=null WHERE ID=? ", [err,audit.id])
                   }
 

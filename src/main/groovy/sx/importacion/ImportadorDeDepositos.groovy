@@ -114,7 +114,7 @@ class ImportadorDeDepositos{
                         }
                     }catch (Exception e){
                         println(e)
-                        String err="Error importando a central: "
+                        String err="Error importando a central replica import dep: "+ExceptionUtils.getRootCauseMessage(e)
                         sql.execute("UPDATE AUDIT_LOG SET MESSAGE=?,DATE_REPLICATED=NOW() WHERE ID=? ", [err,audit.id])
                     }
                 }

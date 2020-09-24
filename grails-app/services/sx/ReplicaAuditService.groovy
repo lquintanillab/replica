@@ -116,7 +116,7 @@ class ReplicaAuditService {
                     }catch (Exception e){
 
                         log.error(e)
-                        String err = "Error importando a central: "+ExceptionUtils.getRootCauseMessage(e)
+                        String err = "Error importando a central audit replica: "+ExceptionUtils.getRootCauseMessage(e)
                        /// sql.execute("UPDATE AUDIT SET MESSAGE=?,DATE_REPLICATED=NOW() WHERE ID=? ", [err,audit.id])
                         
                     }

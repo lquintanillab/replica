@@ -153,7 +153,7 @@ class ReplicaOperacionService {
                 }catch (Exception e){
                     //e.printStackTrace()
                     log.error(e)
-                    String err= "Error importando a central: "+ExceptionUtils.getRootCauseMessage(e)
+                    String err= "Error importando a central Rplica: "+ExceptionUtils.getRootCauseMessage(e)
                     origenSql.execute("UPDATE AUDIT_LOG SET MESSAGE=?,DATE_REPLICATED=NOW() WHERE PERSISTED_OBJECT_ID=? and event_name=?", [err,id,event_name])
                 }
 
@@ -210,7 +210,7 @@ class ReplicaOperacionService {
                 }catch (Exception e){
                     //e.printStackTrace()
                     log.error(e)
-                    String err= "Error importando a central: "+ExceptionUtils.getRootCauseMessage(e)
+                    String err= "Error importando a central REplica operacion: "+ExceptionUtils.getRootCauseMessage(e)
                     origenSql.execute("UPDATE AUDIT_LOG SET MESSAGE=?,DATE_REPLICATED=NOW() WHERE PERSISTED_OBJECT_ID=? AND EVENT_NAME=? ", [err,id,event_name])
                 }
 

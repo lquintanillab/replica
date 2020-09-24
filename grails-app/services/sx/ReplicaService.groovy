@@ -106,7 +106,7 @@ class ReplicaService {
                         sql.execute("UPDATE audit_log SET DATE_REPLICATED=NOW(),MESSAGE=? WHERE ID=? ", ["Registro duplicado",audit.id])
                     }catch (Exception e){
                         log.error(e)
-                        String err="Error importando a central: "
+                        String err="Error importando a central Replica Service: "+ExceptionUtils.getRootCauseMessage(e)
                         sql.execute("UPDATE audit_log SET MESSAGE=?,DATE_REPLICATED=NOW() WHERE ID=? ", [err,audit.id])
                     }
                 }
@@ -285,7 +285,8 @@ class ReplicaService {
                     catch (Exception e){
                             println "${audit.id} -- ${audit.persisted_object_id}"
                             log.error(e)
-                            String err="Error importando a central: "+ExceptionUtils.getRootCauseMessage(e)
+                            String err="Error importando a central Replica Service: "+ExceptionUtils.getRootCauseMessage(e)
+                            sql.execute("UPDATE audit_log SET MESSAGE=?,DATE_REPLICATED=NOW() WHERE ID=? ", [err,audit.id])
                     }
                 }
             }
